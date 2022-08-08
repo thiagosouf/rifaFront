@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function Topo() {
   return (
@@ -6,10 +7,12 @@ export default function Topo() {
       <a href="/">LOGO</a>
       <ul>
         <li>
-          <a href="/">LOGIN</a>
+          <Link to={"/login"}>
+            <UnderlineLink>LOGIN</UnderlineLink>
+          </Link>
         </li>
         <li>
-          <a href="/">CRIAR CONTA</a>
+          <Link to={"/"}>CRIAR CONTA</Link>
         </li>
       </ul>
     </Navbar>
@@ -17,23 +20,33 @@ export default function Topo() {
 }
 
 const Navbar = styled.div`
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 0 20px;
+  /* padding: 0 20px; */
   height: 3.75rem;
-  background-color: #fff;
+  background-color: green;
   position: fixed;
+  opacity: 1;
+
+  a {
+    padding-left: 20px;
+  }
 
   ul {
     display: flex;
-    align-items: center;
     list-style: none;
-    margin-right: 3rem;
+    /* padding-right: 20px; */
   }
 
   li {
-    margin-left: 1rem;
+    margin-right: 1rem;
   }
+`;
+
+const UnderlineLink = styled.p`
+  color: #d2691e;
+  text-decoration-line: underline;
+  /* margin-right: 20px; */
 `;
