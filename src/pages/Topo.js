@@ -11,13 +11,6 @@ export default function Topo() {
         <li>
           <a href="/">CRIAR CONTA</a>
         </li>
-        <li>
-          <input
-            type="text"
-            name="search"
-            placeholder="Search anything here .."
-          />
-        </li>
       </ul>
     </Navbar>
   );
@@ -27,6 +20,7 @@ const Navbar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   padding: 0 20px;
   height: 3.75rem;
   background-color: #fff;
@@ -36,7 +30,7 @@ const Navbar = styled.div`
     display: flex;
     align-items: center;
     list-style: none;
-    margin-left: auto;
+    margin-right: 3rem;
   }
 
   li {
