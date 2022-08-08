@@ -4,10 +4,12 @@ import img from "../assets/img/background.jpg";
 
 export default function Home() {
   return (
-    <Container>
-      <h1>Emily e Victor</h1>
-      <button>Participe da Rifa</button>
-    </Container>
+    <>
+      <Container>
+        <h1>Emily e Victor</h1>
+        <button>Participe da Rifa</button>
+      </Container>
+    </>
   );
 }
 
