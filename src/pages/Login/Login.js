@@ -1,14 +1,16 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
 
 import img from "../../assets/img/background.jpg";
 import api from "../../api";
+import UserContext from "../../contexts/UserContext";
 
 export default function Login() {
   const [signinData, setSigninData] = useState({ email: "", senha: "" });
   const [loading, setLoading] = useState(false);
+  const { userToken, setUserToken } = useContext(UserContext);
 
   const redirectUser = useNavigate();
 
@@ -22,15 +24,19 @@ export default function Login() {
     promise
       .then((response) => {
         setLoading(false);
-        const { token, user } = response.data;
-        // setUserInfo({
-        //   token: token,
-        //   user: user,
-        // });
-        redirectUser("/");
+        const { token } = response.data;
+        console.log(UserContext);
+        setUserToken({
+          token: response.data,
+        });
+        console.log(token);
+        console.log(userToken);
+        console.log(response.data);
+        redirectUser("/rifa", response.data);
       })
       .catch((err) => {
-        alert(err.response.data);
+        console.log(err);
+        alert(err.message);
         setLoading(false);
       });
   }

@@ -2,7 +2,8 @@ import styled from "styled-components";
 import tv1 from "../assets/img/tv1.jpg";
 import img from "../assets/img/casamento21.jpg";
 
-export default function Rifa() {
+export default function Rifa(props) {
+  console.log(props);
   return (
     <Container>
       <BG>
