@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import img from "../assets/img/background.jpg";
 
@@ -7,7 +8,11 @@ export default function Home() {
     <>
       <Container>
         <h1>Emily e Victor</h1>
-        <button>Participe da Rifa</button>
+        <button>
+          <Link to="/numeros">
+            <b>Participe da Rifa</b>
+          </Link>
+        </button>
       </Container>
     </>
   );
