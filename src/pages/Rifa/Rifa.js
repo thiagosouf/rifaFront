@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import tv1 from "../../assets/img/tv1.jpg";
-import img from "../../assets/img/casamento21.jpg";
+import img from "../../assets/img/papel.jpg";
+import { Link } from "react-router-dom";
+import UserContext from "../../contexts/UserContext";
+import { useContext } from "react";
 
-export default function Rifa(props) {
-  console.log(props);
+export default function Rifa() {
+  const { userToken } = useContext(UserContext);
+  console.log(userToken);
   return (
     <Container>
       <BG>
@@ -34,10 +38,48 @@ export default function Rifa(props) {
             </Premioitens>
           </Premio>
           <Valor>
-            <h1>COMPRAR RIFA</h1>
+            <Link to="/numeros">COMPRAR RIFA</Link>
           </Valor>
         </Info>
       </Principal>
+      <Regras>
+        <Premio>
+          <Premiotitulo>Regras:</Premiotitulo>
+          <br />
+          <br />
+          <Premioitens>
+            <b>
+              O ganhador será definido com base nos 3 ultimos números do 1º
+              prêmio da Loteria Federal de 17/12/2022.
+            </b>
+            <br />
+            <br />
+            <b>
+              EXEMPLO: Se o número sorteado pela Loteria Federal for{" "}
+              <strong>048336</strong>.
+            </b>
+            <br />
+            <b>
+              O vencedor da rifa será o que tiver escolhido o numero{" "}
+              <strong>336</strong>
+            </b>
+            <br />
+            <br />
+            <b>
+              O sorteio será realizado na data informada pelo organizador caso a
+              meta de 100% de bilhetes pagos seja alcançada. Caso a meta não
+              seja alcançada, a data do sorteio será alterada automaticamente
+              para o sorteio seguinte da Loteria Federal.
+            </b>
+            <br />
+            <br />
+            <b>
+              O organizador entregará os prêmios em até 10 dias após a
+              realização do sorteio.
+            </b>
+          </Premioitens>
+        </Premio>
+      </Regras>
     </Container>
   );
 }
@@ -105,6 +147,15 @@ const Info = styled.div`
   padding: 15px;
 `;
 
+const Regras = styled.div`
+  font-size: 0.9rem;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  margin: 10px;
+  /* height: 288px; */
+  padding: 15px;
+`;
+
 const Valor = styled.div`
   display: flex;
   background-color: green;
@@ -135,8 +186,8 @@ const Comprar = styled.div`
 `;
 
 const Container = styled.div`
-  background-color: rgba(192, 225, 237, 0.5);
-  height: 100vh;
+  background-color: rgba(255, 225, 237, 0.4);
+  height: 100%;
   width: 99vw;
 
   /* h1 {

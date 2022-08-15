@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 export default function Topo() {
   return (
     <Navbar>
-      <a href="/">LOGO</a>
+      <Link to={"/"}>PAGINA INICIAL</Link>
       <ul>
         <li>
-          <Link to={"/login"}>
-            <UnderlineLink>LOGIN</UnderlineLink>
-          </Link>
+          <Link to={"/login"}>LOGIN</Link>
         </li>
         <li>
-          <Link to={"/"}>CRIAR CONTA</Link>
+          <Link to={"/cadastro"}>CRIAR CONTA</Link>
         </li>
       </ul>
     </Navbar>
@@ -45,8 +43,4 @@ const Navbar = styled.div`
   }
 `;
 
-const UnderlineLink = styled.p`
-  color: #d2691e;
-  text-decoration-line: underline;
-  /* margin-right: 20px; */
-`;
+// color: #d2691e;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import img from "../../assets/img/background.jpg";
 import api from "../../api";
@@ -140,6 +140,13 @@ export default function Login() {
               </RoundedButton>
             </FormLabel>
           </AuthForm>
+          <Cadastrar>
+            <Link to="/login">
+              <b>
+                Já tem uma conta? <a>Clique Aqui!</a>
+              </b>
+            </Link>
+          </Cadastrar>
         </AuthSection>
       </Container>
     </>
@@ -220,4 +227,11 @@ const Container = styled.div`
   align-content: center;
   justify-content: center;
   background-color: #87cefa;
+`;
+
+const Cadastrar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
 `;
