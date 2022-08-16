@@ -38,7 +38,7 @@ const Green = styled.div`
   padding: 1rem;
   width: 15px;
   height: 100%;
-  background-color: green;
+  background-color: gray;
   border-radius: 15px;
 `;
 
@@ -46,7 +46,7 @@ const GreenCheck = styled.div`
   padding: 1rem;
   width: 15px;
   height: 100%;
-  background-color: yellow;
+  background-color: #f4c703;
   border-radius: 15px;
 `;
 
@@ -54,7 +54,7 @@ const Gray = styled.div`
   padding: 1rem;
   width: 15px;
   height: 100%;
-  background-color: gray;
+  background-color: green;
   border-radius: 15px;
 `;
 
