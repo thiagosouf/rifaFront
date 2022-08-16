@@ -3,6 +3,7 @@ import img from "../../assets/img/papel.jpg";
 import { Link } from "react-router-dom";
 import UserContext from "../../contexts/UserContext";
 import { useContext } from "react";
+import Button from "@mui/material/Button";
 import {
   ContainerPremio,
   Premio,
@@ -42,7 +43,6 @@ export default function Rifa() {
           <Premio>
             <Premiotitulo>Premio</Premiotitulo>
             <Premioitens>
-              <br></br>
               <b>1ª Ganhador(a):</b>
               <h1>SmartTV LG 43" UHD</h1>
               <br></br>
@@ -50,7 +50,11 @@ export default function Rifa() {
             </Premioitens>
           </Premio>
           <Valor>
-            <Link to="/numeros">COMPRAR RIFA</Link>
+            <Link to="/numeros">
+              <Button size="large" variant="contained" color="warning">
+                PARTICIPE DA RIFA
+              </Button>
+            </Link>
           </Valor>
         </Info>
       </Principal>

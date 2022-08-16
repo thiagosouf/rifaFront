@@ -8,9 +8,11 @@ const Navbar = styled.div`
   /* padding: 0 20px; */
   height: 3.75rem;
   background-color: green;
-  color: #f0f2b6;
+  color: white;
   position: fixed;
   opacity: 1;
+  font-family: "Amatic SC", cursive;
+  font-size: 1.5rem;
 
   a {
     padding-left: 20px;
@@ -19,7 +21,7 @@ const Navbar = styled.div`
   ul {
     display: flex;
     list-style: none;
-    color: #f0f2b6;
+    color: white;
     /* padding-right: 20px; */
   }
 

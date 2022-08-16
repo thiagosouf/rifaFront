@@ -4,7 +4,7 @@ import { Navbar } from "./styles";
 export default function Topo() {
   return (
     <Navbar>
-      <Link to={"/"}>PAGINA INICIAL</Link>
+      <Link to={"/"}>Pagina Inicial</Link>
       <ul>
         <li>
           <Link to={"/login"}>LOGIN</Link>

@@ -5,16 +5,18 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: flex-start;
+  align-content: center;
   justify-content: space-evenly;
   background-color: #87cefa;
   background-image: url(${img});
   background-size: cover;
   background-position: center;
   height: 100vh;
+  text-align: center;
 
   h1 {
-    font-size: 3rem;
+    font-family: "Great Vibes", cursive;
+    font-size: 5rem;
     color: #d2691e;
   }
   b {

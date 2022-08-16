@@ -35,7 +35,7 @@ const Item = styled.div`
   flex-direction: column;
   margin: 0.05rem;
 `;
-const Green = styled.div`
+const Gray = styled.div`
   padding: 1rem;
   width: 15px;
   height: 100%;
@@ -51,7 +51,7 @@ const GreenCheck = styled.div`
   border-radius: 15px;
 `;
 
-const Gray = styled.div`
+const Green = styled.div`
   padding: 1rem;
   width: 15px;
   height: 100%;
@@ -59,12 +59,37 @@ const Gray = styled.div`
   border-radius: 15px;
 `;
 
-const Red = styled.div`
-  padding: 1rem;
-  width: 15px;
-  height: 100%;
-  border-radius: 15px;
-  background-color: green;
+const Legenda = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
 `;
 
-export { Principal, Container, Item, Green, GreenCheck, Gray, Red };
+const LegendaInfo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: #03a9f4;
+    font-family: "Amatic SC", cursive;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+`;
+
+export {
+  Principal,
+  Container,
+  Item,
+  Green,
+  GreenCheck,
+  Gray,
+  Legenda,
+  LegendaInfo,
+};

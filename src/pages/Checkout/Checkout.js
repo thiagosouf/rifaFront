@@ -14,6 +14,8 @@ import {
   ConfirmButton,
   Botao,
 } from "./styles";
+import { Valor } from "../Rifa/styles";
+import Button from "@mui/material/Button";
 
 export default function Checkout() {
   const { userToken } = useContext(UserContext);
@@ -60,11 +62,13 @@ export default function Checkout() {
         </Container>
       </Principal>
       <Rodapé>
-        <ConfirmButton>
+        <Valor>
           {numeros.length <= 0 ? (
-            <>
-              <Link to="/rifa">PARTICIPE DA RIFA</Link>
-            </>
+            <Link to="/checkout">
+              <Button size="large" variant="contained" color="warning">
+                CONFIRMAR
+              </Button>
+            </Link>
           ) : (
             <Botao
               onClick={() => {
@@ -86,7 +90,7 @@ export default function Checkout() {
               CONFIRMAR
             </Botao>
           )}
-        </ConfirmButton>
+        </Valor>
       </Rodapé>
     </>
   );

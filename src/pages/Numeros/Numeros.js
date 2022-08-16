@@ -10,9 +10,12 @@ import {
   Green,
   GreenCheck,
   Gray,
-  Red,
+  Legenda,
+  LegendaInfo,
 } from "./styles";
-import { BG, Topo, Rodapé, ConfirmButton } from "../Checkout/styles";
+import { BG, Topo, Rodapé, Yellow } from "../Checkout/styles";
+import { Valor } from "../Rifa/styles";
+import Button from "@mui/material/Button";
 
 export default function Numeros() {
   const { userToken } = useContext(UserContext);
@@ -41,6 +44,20 @@ export default function Numeros() {
         <h1>Escolha seus numeros da sorte:</h1>
       </Topo>
       <Principal>
+        <Legenda>
+          <LegendaInfo>
+            <Gray></Gray>
+            <h1>Disponíveis</h1>
+          </LegendaInfo>
+          <LegendaInfo>
+            <GreenCheck></GreenCheck>
+            <h1>Aguardando</h1>
+          </LegendaInfo>
+          <LegendaInfo>
+            <Green></Green>
+            <h1>Pagos</h1>
+          </LegendaInfo>
+        </Legenda>
         <Container>
           {numeros.map((numero) =>
             numero.status === "Disponíveis" ? (
@@ -52,7 +69,7 @@ export default function Numeros() {
             ) : numero.status === "Pago" ? (
               <>
                 <Item key={numero.numero}>
-                  <Red>{numero.numero}</Red>
+                  <Green>{numero.numero}</Green>
                 </Item>
               </>
             ) : numero.status === "Selecionado" ? (
@@ -64,7 +81,7 @@ export default function Numeros() {
             ) : (
               <>
                 <Item key={numero.numero}>
-                  <Gray>{numero.numero}</Gray>
+                  <Green>{numero.numero}</Green>
                 </Item>
               </>
             )
@@ -72,9 +89,13 @@ export default function Numeros() {
         </Container>
       </Principal>
       <Rodapé>
-        <ConfirmButton>
-          <Link to="/checkout">CONFIRMAR</Link>
-        </ConfirmButton>
+        <Valor>
+          <Link to="/checkout">
+            <Button size="large" variant="contained" color="warning">
+              CONFIRMAR
+            </Button>
+          </Link>
+        </Valor>
       </Rodapé>
     </>
   );
@@ -87,7 +108,7 @@ function Bolinha(props) {
   console.log(props.status);
   return selecionado === "Disponíveis" ? (
     <>
-      <Green
+      <Gray
         onClick={() => {
           const promise = api.put(
             "/rifa",
@@ -113,7 +134,7 @@ function Bolinha(props) {
         }}
       >
         {props.numero}
-      </Green>
+      </Gray>
     </>
   ) : (
     <GreenCheck

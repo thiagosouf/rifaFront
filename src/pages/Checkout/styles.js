@@ -5,7 +5,7 @@ const BG = styled.div`
   position: fixed;
   img {
     height: 100vh;
-    width: 99vw;
+    width: 100vw;
   }
 `;
 
@@ -14,6 +14,11 @@ const Topo = styled.div`
   font-size: 3rem;
   display: flex;
   justify-content: center;
+  h1 {
+    color: #03a9f4;
+    font-family: "Amatic SC", cursive;
+    text-align: center;
+  }
 `;
 
 const Principal = styled.div`
@@ -66,10 +71,6 @@ const ConfirmButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 290px;
-  height: 45px;
-  background: rgba(152, 251, 152, 0.3);
-  color: white;
   border: none;
   border-radius: 5px;
   font-size: medium;
