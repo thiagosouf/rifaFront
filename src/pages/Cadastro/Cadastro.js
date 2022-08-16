@@ -184,7 +184,7 @@ const RoundedButton = styled.button`
   justify-content: center;
   width: 290px;
   height: 45px;
-  background: rgba(31, 94, 238, 1);
+  background: green;
   color: white;
   border: none;
   border-radius: 5px;

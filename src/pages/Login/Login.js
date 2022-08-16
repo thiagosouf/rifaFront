@@ -3,9 +3,18 @@ import { useState, useContext } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { Link, useNavigate } from "react-router-dom";
 
-import img from "../../assets/img/background.jpg";
 import api from "../../api";
 import UserContext from "../../contexts/UserContext";
+import {
+  BG,
+  AuthSection,
+  AuthForm,
+  FormLabel,
+  FormInput,
+  RoundedButton,
+  Cadastrar,
+  Container,
+} from "./styles";
 
 export default function Login() {
   const [signinData, setSigninData] = useState({ email: "", senha: "" });
@@ -100,86 +109,3 @@ export default function Login() {
     </>
   );
 }
-
-const BG = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  background-color: #87cefa;
-  background-image: url(${img});
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  opacity: 0.6;
-  z-index: -9;
-  position: relative;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  background-color: #87cefa;
-`;
-
-const AuthSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #d2691e;
-  background-color: #d2691e;
-  border-radius: 15px;
-  z-index: 999;
-  position: absolute;
-  top: 25vh;
-  align-content: center;
-`;
-
-const AuthForm = styled.form`
-  margin-top: 20%;
-  padding: 0 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  :disabled {
-    background: #ccc;
-  }
-`;
-
-const FormLabel = styled.label`
-  margin-bottom: 10px;
-`;
-
-const FormInput = styled.input`
-  width: 250px;
-  height: 15px;
-  border-radius: 5px;
-  border: 1px #d4d4d4 solid;
-  padding: 20px;
-  font-size: large;
-`;
-
-const RoundedButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 290px;
-  height: 45px;
-  background: rgba(31, 94, 238, 1);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: medium;
-`;
-
-const Cadastrar = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 0;
-`;

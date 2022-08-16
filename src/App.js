@@ -13,13 +13,11 @@ import Checkout from "./pages/Checkout/Checkout";
 import UserContext from "./contexts/UserContext";
 
 export default function App() {
-  // const [codigo, setCodigo] = useState("");
   const [userToken, setUserToken] = useState({ token: "" });
   return (
     <UserContext.Provider value={{ userToken, setUserToken }}>
       <BrowserRouter>
         <Topo />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rifa" element={<Rifa />} />

@@ -1,17 +1,29 @@
 import styled from "styled-components";
+import img from "../../assets/img/background.jpg";
 
 const BG = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-content: flex-start;
-  justify-content: space-evenly;
+  align-content: center;
+  justify-content: center;
   background-color: #87cefa;
   background-image: url(${img});
   background-size: cover;
   background-position: center;
   height: 100vh;
   opacity: 0.6;
+  z-index: -9;
+  position: relative;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #87cefa;
 `;
 
 const AuthSection = styled.div`
@@ -19,11 +31,18 @@ const AuthSection = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: 1px solid #d2691e;
+  background-color: #d2691e;
+  border-radius: 15px;
+  z-index: 999;
+  position: absolute;
+  top: 25vh;
+  align-content: center;
 `;
 
 const AuthForm = styled.form`
   margin-top: 20%;
-  padding: 20px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,18 +70,27 @@ const RoundedButton = styled.button`
   justify-content: center;
   width: 290px;
   height: 45px;
-  background: rgba(31, 94, 238, 1);
+  background: green;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: medium;
 `;
 
-export default {
+const Cadastrar = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+`;
+
+export {
   BG,
   AuthSection,
-  AuthForm,
   FormLabel,
+  AuthForm,
   FormInput,
   RoundedButton,
+  Cadastrar,
+  Container,
 };

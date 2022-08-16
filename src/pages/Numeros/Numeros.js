@@ -1,20 +1,22 @@
-import styled from "styled-components";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/img/papel.jpg";
 import api from "../../api";
 import UserContext from "../../contexts/UserContext";
+import {
+  Principal,
+  Container,
+  Item,
+  Green,
+  GreenCheck,
+  Gray,
+  Red,
+} from "./styles";
+import { BG, Topo, Rodapé, ConfirmButton } from "../Checkout/styles";
 
 export default function Numeros() {
   const { userToken } = useContext(UserContext);
   const [numeros, setNumeros] = useState([]);
-
-  // let numeros = [
-  //   { numero: 1, status: "Disponíveis" },
-  //   { numero: 2, status: "Pago" },
-  //   { numero: 3, status: "Disponíveis" },
-  //   { numero: 4, status: "reservado" },
-  // ];
 
   function getNumeros() {
     const promise = api.get("/rifa");
@@ -46,13 +48,6 @@ export default function Numeros() {
                 <Item key={numero.numero}>
                   <Bolinha numero={numero.numero} status={numero.status} />
                 </Item>
-
-                {/* {codigo ? (
-                    <GreenCheck>{numero.numero}</GreenCheck>
-                  ) : (
-                    <Green>{numero.numero}</Green>
-                  )}
-                </Item> */}
               </>
             ) : numero.status === "Pago" ? (
               <>
@@ -63,7 +58,6 @@ export default function Numeros() {
             ) : numero.status === "Selecionado" ? (
               <>
                 <Item key={numero.numero}>
-                  {/* <Yellow>{numero.numero}</Yellow> */}
                   <Bolinha numero={numero.numero} status={numero.status} />
                 </Item>
               </>
@@ -115,8 +109,6 @@ function Bolinha(props) {
               console.log("deu ruim");
               console.log("err");
             });
-          // props.reservas.push(parseInt(props.id))
-          // props.lugaresReservados.push(`Assento ${props.lugar}`)
         }}
       >
         {props.numero}
@@ -145,134 +137,9 @@ function Bolinha(props) {
             console.log("deu ruim");
             console.log("err");
           });
-        // props.reservas.push(parseInt(props.id))
-        // props.lugaresReservados.push(`Assento ${props.lugar}`)
       }}
     >
       {props.numero}
     </GreenCheck>
   );
 }
-
-const BG = styled.div`
-  z-index: -1;
-  position: fixed;
-  img {
-    height: 100vh;
-    width: 100vw;
-  }
-`;
-
-const Topo = styled.div`
-  text-align: center;
-  padding-top: 5rem;
-  font-size: 3rem;
-  display: flex;
-  justify-content: center;
-`;
-
-const Principal = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  /* background-color: blue; */
-  border-radius: 15px;
-  /* padding: 1rem; */
-  display: flex;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  width: 80%;
-  height: 100%;
-  background-color: #f8f8f8;
-  border-radius: 15px;
-  padding: 1rem;
-`;
-
-const Item = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* padding: 1rem; */
-  display: flex;
-  flex-direction: column;
-  margin: 0.05rem;
-  /* background-color: green; */
-  /* border-radius: 15px; */
-  /* width: 15px;
-  height: 100%; */
-`;
-const Green = styled.div`
-  padding: 1rem;
-  width: 15px;
-  height: 100%;
-  background-color: green;
-  border-radius: 15px;
-`;
-
-const GreenCheck = styled.div`
-  padding: 1rem;
-  width: 15px;
-  height: 100%;
-  background-color: yellow;
-  border-radius: 15px;
-`;
-
-const Gray = styled.div`
-  padding: 1rem;
-  width: 15px;
-  height: 100%;
-  background-color: gray;
-  border-radius: 15px;
-`;
-
-const Red = styled.div`
-  padding: 1rem;
-  width: 15px;
-  height: 100%;
-  border-radius: 15px;
-  background-color: red;
-`;
-
-const Yellow = styled.div`
-  padding: 1rem;
-  width: 15px;
-  height: 100%;
-  border-radius: 15px;
-  background-color: yellow;
-`;
-
-const Rodapé = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 4rem;
-  background-color: green;
-  color: white;
-  position: fixed;
-  bottom: 0;
-`;
-
-const ConfirmButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 290px;
-  height: 45px;
-  background: rgba(152, 251, 152, 0.3);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: medium;
-`;
