@@ -23,6 +23,7 @@ const Container = styled.div`
   background-color: #f8f8f8;
   border-radius: 15px;
   padding: 1rem;
+  margin-bottom: 5rem;
 `;
 
 const Item = styled.div`
@@ -63,7 +64,7 @@ const Red = styled.div`
   width: 15px;
   height: 100%;
   border-radius: 15px;
-  background-color: red;
+  background-color: green;
 `;
 
 export { Principal, Container, Item, Green, GreenCheck, Gray, Red };

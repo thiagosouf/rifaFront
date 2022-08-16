@@ -61,9 +61,6 @@ export default function Checkout() {
       </Principal>
       <Rodapé>
         <ConfirmButton>
-          {console.log(numeros.length)}
-          {console.log(numeros)}
-          {console.log(usuarioData)}
           {numeros.length <= 0 ? (
             <>
               <Link to="/rifa">PARTICIPE DA RIFA</Link>

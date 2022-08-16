@@ -106,6 +106,7 @@ function Bolinha(props) {
               setSelecionado("Selecionado");
             })
             .catch((err) => {
+              alert("Voce Precisa estar logado para selecionar um numero!");
               console.log("deu ruim");
               console.log("err");
             });
@@ -134,6 +135,7 @@ function Bolinha(props) {
             setSelecionado("Disponíveis");
           })
           .catch((err) => {
+            alert("Esse numero já foi selecionado por outro usuario");
             console.log("deu ruim");
             console.log("err");
           });
