@@ -66,11 +66,14 @@ export default function Checkout() {
           {numeros.length <= 0 ? (
             <Link to="/checkout">
               <Button size="large" variant="contained" color="warning">
-                CONFIRMAR
+                PARTICIPE DA RIFA
               </Button>
             </Link>
           ) : (
-            <Botao
+            <Button
+              size="large"
+              variant="contained"
+              color="warning"
               onClick={() => {
                 const num = [];
                 for (let i = 0; i < numeros.length; i++) {
@@ -88,7 +91,7 @@ export default function Checkout() {
               }}
             >
               CONFIRMAR
-            </Botao>
+            </Button>
           )}
         </Valor>
       </Rodapé>

@@ -61,7 +61,7 @@ const Valor = styled.div`
 
 const Premiotitulo = styled.div`
   font-size: 1.5rem;
-  color: #03a9f4;
+  color: #01579b;
   font-family: "Patrick Hand", cursive;
   margin-bottom: 0.5rem;
 `;
@@ -69,7 +69,7 @@ const Premiotitulo = styled.div`
 const Premioitens = styled.div`
   h1 {
     font-size: 1.5rem;
-    color: #03a9f4;
+    color: #01579b;
     font-family: "Patrick Hand", cursive;
   }
   b,

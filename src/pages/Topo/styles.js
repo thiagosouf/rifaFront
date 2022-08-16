@@ -7,7 +7,7 @@ const Navbar = styled.div`
   align-items: center;
   /* padding: 0 20px; */
   height: 3.75rem;
-  background-color: green;
+  background-color: #fb8c00;
   color: white;
   position: fixed;
   opacity: 1;

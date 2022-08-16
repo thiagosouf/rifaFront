@@ -15,7 +15,7 @@ const Topo = styled.div`
   display: flex;
   justify-content: center;
   h1 {
-    color: #03a9f4;
+    color: #558b2f;
     font-family: "Amatic SC", cursive;
     text-align: center;
   }
@@ -51,7 +51,7 @@ const Yellow = styled.div`
   padding: 1rem;
   width: 15px;
   border-radius: 15px;
-  background-color: yellow;
+  background-color: #ffb300;
   margin: 10px;
 `;
 
